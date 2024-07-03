@@ -4,8 +4,11 @@ const dotenv = require("dotenv")
 const mongoose = require("mongoose")
 
 
+
 const app = express()
 dotenv.config()
+app.use(express.json())
+app.use(require("./routes/auth"))
 
 const connectdb =  async () => { 
   //  mongoose.connect(process.env.MONGO_URI)
@@ -17,11 +20,6 @@ const connectdb =  async () => {
     }
 }
 connectdb();
-
-app.get('/',(req,res) => {
-    console.log("this is get request")
-})
-
 
 app.listen(process.env.PORT,() => {
     console.log(`server is running at ${process.env.PORT}`)
