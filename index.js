@@ -9,6 +9,7 @@ const app = express()
 dotenv.config()
 app.use(express.json())
 app.use(require("./routes/auth"))
+app.use(require("./routes/getUser"))
 
 const connectdb =  async () => { 
   //  mongoose.connect(process.env.MONGO_URI)
