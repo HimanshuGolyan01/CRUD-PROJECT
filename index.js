@@ -11,6 +11,7 @@ app.use(express.json())
 app.use(require("./routes/auth"))
 app.use(require("./routes/getUser"))
 app.use(require("./routes/update"))
+app.use(require("./routes/deleteuser"))
 
 const connectdb =  async () => { 
   //  mongoose.connect(process.env.MONGO_URI)
